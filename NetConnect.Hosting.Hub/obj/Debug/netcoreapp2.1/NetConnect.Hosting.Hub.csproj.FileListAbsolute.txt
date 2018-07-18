@@ -12,3 +12,17 @@ C:\Users\HKD44\source\repos\NetConnect\NetConnect.Hosting.Hub\obj\Debug\netcorea
 C:\Users\HKD44\source\repos\NetConnect\NetConnect.Hosting.Hub\obj\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.RazorTargetAssemblyInfo.cache
 C:\Users\HKD44\source\repos\NetConnect\NetConnect.Hosting.Hub\obj\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.dll
 C:\Users\HKD44\source\repos\NetConnect\NetConnect.Hosting.Hub\obj\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.pdb
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Hub\bin\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.deps.json
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Hub\bin\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.runtimeconfig.json
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Hub\bin\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.runtimeconfig.dev.json
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Hub\bin\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.dll
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Hub\bin\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.pdb
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Hub\obj\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.csprojAssemblyReference.cache
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Hub\obj\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.csproj.CoreCompileInputs.cache
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Hub\obj\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.RazorAssemblyInfo.cache
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Hub\obj\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.RazorAssemblyInfo.cs
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Hub\obj\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.AssemblyInfoInputs.cache
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Hub\obj\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.AssemblyInfo.cs
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Hub\obj\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.RazorTargetAssemblyInfo.cache
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Hub\obj\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.dll
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Hub\obj\Debug\netcoreapp2.1\NetConnect.Hosting.Hub.pdb
