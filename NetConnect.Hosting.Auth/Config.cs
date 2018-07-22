@@ -4,6 +4,7 @@
 using IdentityServer4;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
+using NetConnect.Hosting.Core;
 using System.Collections.Generic;
 using System.Security.Claims;
 
@@ -40,7 +41,7 @@ namespace NetConnect.Hosting.Auth
                     ClientId = "client",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
 
-                    ClientSecrets = 
+                    ClientSecrets =
                     {
                         new Secret("secret".Sha256())
                     },
@@ -53,7 +54,7 @@ namespace NetConnect.Hosting.Auth
                     ClientId = "ro.client",
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
 
-                    ClientSecrets = 
+                    ClientSecrets =
                     {
                         new Secret("secret".Sha256())
                     },
@@ -65,17 +66,17 @@ namespace NetConnect.Hosting.Auth
                 {
                     ClientId = "mvc",
                     ClientName = "MVC Client",
-                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
+                    AllowedGrantTypes = GrantTypes.Implicit,
 
-                    ClientSecrets = 
+                    ClientSecrets =
                     {
                         new Secret("secret".Sha256())
                     },
 
-                    RedirectUris = { "http://localhost:5002/signin-oidc" },
-                    PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
+                    RedirectUris = { "https://localhost:44348/signin-oidc" },
+                    PostLogoutRedirectUris = { "https://localhost:44348/signout-callback-oidc" },
 
-                    AllowedScopes = 
+                    AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
@@ -93,25 +94,29 @@ namespace NetConnect.Hosting.Auth
                 new TestUser
                 {
                     SubjectId = "1",
-                    Username = "alice",
-                    Password = "password",
+                    Username = "burak.basar",
+                    Password = "123",
 
                     Claims = new List<Claim>
                     {
-                        new Claim("name", "Alice"),
-                        new Claim("website", "https://alice.com")
+                        new Claim(NetConnectClaims.Name, "Burak"),
+                        new Claim(NetConnectClaims.Lastname, "Başar"),
+                        new Claim(NetConnectClaims.UserId, "1"),
+                        new Claim(NetConnectClaims.Email, "burak@deneme.com")
                     }
                 },
                 new TestUser
                 {
                     SubjectId = "2",
-                    Username = "bob",
-                    Password = "password",
+                    Username = "busra.kaya",
+                    Password = "123",
 
                     Claims = new List<Claim>
                     {
-                        new Claim("name", "Bob"),
-                        new Claim("website", "https://bob.com")
+                        new Claim(NetConnectClaims.Name, "Büşra"),
+                        new Claim(NetConnectClaims.Lastname, "Kaya"),
+                        new Claim(NetConnectClaims.UserId, "2"),
+                        new Claim(NetConnectClaims.Email, "busra@deneme.com")
                     }
                 }
             };

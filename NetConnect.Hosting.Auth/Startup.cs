@@ -1,4 +1,5 @@
 ﻿using IdentityServer4;
+using IdentityServer4.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,7 +19,11 @@ namespace NetConnect.Hosting.Auth
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApiResources())
                 .AddInMemoryClients(Config.GetClients())
+                .AddProfileService<ProfileService>()
                 .AddTestUsers(Config.GetUsers());
+
+
+            services.AddScoped<IProfileService, ProfileService>();
 
             services.AddAuthentication()
                 .AddGoogle("Google", options =>
