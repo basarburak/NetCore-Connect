@@ -7,3 +7,12 @@ C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.Core\obj\Debug\net
 C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.Core\obj\Debug\netstandard2.0\NetConnect.Hosting.Core.AssemblyInfo.cs
 C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.Core\obj\Debug\netstandard2.0\NetConnect.Hosting.Core.dll
 C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.Core\obj\Debug\netstandard2.0\NetConnect.Hosting.Core.pdb
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Core\bin\Debug\netstandard2.0\NetConnect.Hosting.Core.deps.json
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Core\bin\Debug\netstandard2.0\NetConnect.Hosting.Core.dll
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Core\bin\Debug\netstandard2.0\NetConnect.Hosting.Core.pdb
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Core\obj\Debug\netstandard2.0\NetConnect.Hosting.Core.csprojAssemblyReference.cache
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Core\obj\Debug\netstandard2.0\NetConnect.Hosting.Core.csproj.CoreCompileInputs.cache
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Core\obj\Debug\netstandard2.0\NetConnect.Hosting.Core.AssemblyInfoInputs.cache
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Core\obj\Debug\netstandard2.0\NetConnect.Hosting.Core.AssemblyInfo.cs
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Core\obj\Debug\netstandard2.0\NetConnect.Hosting.Core.dll
+C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.Core\obj\Debug\netstandard2.0\NetConnect.Hosting.Core.pdb

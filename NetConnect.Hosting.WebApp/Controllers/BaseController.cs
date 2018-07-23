@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR.Client;
+using NetConnect.Hosting.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +17,18 @@ namespace NetConnect.Hosting.WebApp.Controllers
         {
             try
             {
+                var name = User.Claims.First(x => x.Type == NetConnectClaims.Name).Value;
+                var lastname = User.Claims.First(x => x.Type == NetConnectClaims.Lastname).Value;
+                var userId = User.Claims.First(x => x.Type == NetConnectClaims.UserId).Value;
+
+
+                var hubUrl = "https://localhost:44317/chat";
+
                 var hubConnection = new HubConnectionBuilder()
-                .WithUrl("https://localhost:44317/" + "chat", options =>
+                .WithUrl(hubUrl, options =>
                 {
                     options.Transports = transportType;
+                    options.Headers = options.Headers = new Dictionary<string, string>() { { NetConnectClaims.UserId, userId }, { NetConnectClaims.Name, name }, { NetConnectClaims.Lastname, lastname } }; ;
                 })
                 .Build();
 
@@ -31,20 +40,22 @@ namespace NetConnect.Hosting.WebApp.Controllers
                     return Task.CompletedTask;
                 };
 
-                hubConnection.On<string, string>("Send", (sender, message) => ConnectionState(sender, message));
+                hubConnection.On<string, string>("broadcastMessage", (sender, message) => InvokeMessage(sender, message));
 
+                //Connect
                 await hubConnection.StartAsync();
 
-                await hubConnection.InvokeAsync("Send", "test message");
+                ////Send Message
+                //await hubConnection.InvokeAsync("Send", "test message");
 
-
-                await hubConnection.DisposeAsync().ContinueWith(t =>
-                {
-                    if (t.IsFaulted)
-                        Console.WriteLine(t.Exception.GetBaseException());
-                    else
-                        Console.WriteLine("Disconnected");
-                });
+                ////Disconnecct
+                //await hubConnection.DisposeAsync().ContinueWith(t =>
+                //{
+                //    if (t.IsFaulted)
+                //        Console.WriteLine(t.Exception.GetBaseException());
+                //    else
+                //        Console.WriteLine("Disconnected");
+                //});
 
             }
             catch (Exception ex)
@@ -52,7 +63,8 @@ namespace NetConnect.Hosting.WebApp.Controllers
 
             }
         }
-        public void ConnectionState(string sender, string message)
+
+        public void InvokeMessage(string sender, string message)
         {
 
         }

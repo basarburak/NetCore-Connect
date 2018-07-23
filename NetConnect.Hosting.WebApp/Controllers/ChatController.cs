@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.Mvc;
 
 namespace NetConnect.Hosting.WebApp.Controllers
@@ -10,6 +7,7 @@ namespace NetConnect.Hosting.WebApp.Controllers
     {
         public IActionResult Index()
         {
+            //Connect(HttpTransportType.WebSockets);
             return View();
         }
     }

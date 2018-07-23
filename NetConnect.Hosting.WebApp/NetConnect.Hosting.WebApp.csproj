@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NetConnect.Hosting.Core\NetConnect.Hosting.Core.csproj" />
-    <ProjectReference Include="..\NetConnect.Hosting.HubServer\NetConnect.Hosting.HubServer.csproj" />
   </ItemGroup>
 
 </Project>

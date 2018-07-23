@@ -13,4 +13,8 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NetConnect.Hosting.Core\NetConnect.Hosting.Core.csproj" />
+  </ItemGroup>
+
 </Project>

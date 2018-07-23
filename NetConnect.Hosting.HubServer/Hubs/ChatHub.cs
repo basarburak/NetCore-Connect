@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using Microsoft.AspNetCore.Http.Connections;
+using Microsoft.AspNetCore.SignalR;
+using NetConnect.Hosting.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,27 +10,40 @@ namespace NetConnect.Hosting.HubServer.Hubs
 {
     public class ChatHub : Hub
     {
+        readonly static Dictionary<string, string> userList = new Dictionary<string, string>();
+
         public override async Task OnConnectedAsync()
         {
-            var id = Context.ConnectionId;
+            var headers = Context.GetHttpContext().Request.Headers["midlaware"];
 
-            await Clients.All.SendAsync("Send", $"{Context.ConnectionId} joined");
+            var userId = Context.GetHttpContext().Request.Headers[NetConnectClaims.UserId];
+            var name = Context.GetHttpContext().Request.Headers[NetConnectClaims.Name];
+            var lastname = Context.GetHttpContext().Request.Headers[NetConnectClaims.Lastname];
+
+            var fullName = name + " " + lastname;
+
+            var connectionId = Context.ConnectionId;
+
+            userList.Add(connectionId, userId);
+
+            await Clients.All.SendAsync("broadcastMessage", $"{fullName} şuan bağlandı.");
         }
 
         public override async Task OnDisconnectedAsync(Exception ex)
         {
+            userList.Remove(Context.ConnectionId);
+
             await Clients.Others.SendAsync("Send", $"{Context.ConnectionId} left");
         }
 
-        //public Task Send(string message)
-        //{
-        //    return Clients.All.SendAsync("Send", $"{Context.ConnectionId}: {message}");
-        //}
-
         public void Send(string name, string message)
         {
-            // Call the broadcastMessage method to update clients.
             Clients.All.SendAsync("broadcastMessage", name, message);
+        }
+
+        public Dictionary<string,string> GetAllUsers()
+        {
+            return userList;
         }
 
         public Task SendToOthers(string message)

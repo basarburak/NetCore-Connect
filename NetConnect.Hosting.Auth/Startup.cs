@@ -2,19 +2,33 @@
 using IdentityServer4.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 namespace NetConnect.Hosting.Auth
 {
     public class Startup
     {
+        private readonly IHostingEnvironment hostingEnvironment;
+        public IConfiguration Configuration { get; set; }
+        public Startup(IConfiguration configuration, IHostingEnvironment hostingEnvironment)
+        {
+            this.hostingEnvironment = hostingEnvironment;
+            Configuration = configuration;
+        }
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
 
-            // configure identity server with in-memory stores, keys, clients and scopes
-            services.AddIdentityServer()
+
+            var cert = new X509Certificate2(Path.Combine(hostingEnvironment.ContentRootPath, "NetConnectKey.pfx"), "190111");
+            var builder = services.AddIdentityServer()
+                .AddSigningCredential(cert);
+
+               builder
                 .AddDeveloperSigningCredential()
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApiResources())
