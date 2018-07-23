@@ -27,7 +27,7 @@ namespace NetConnect.Hosting.WebApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+          //  JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
             services.AddAuthentication(options =>
             {

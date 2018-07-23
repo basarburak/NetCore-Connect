@@ -7,7 +7,6 @@ namespace NetConnect.Hosting.WebApp.Controllers
     {
         public IActionResult Index()
         {
-            //Connect(HttpTransportType.WebSockets);
             return View();
         }
     }

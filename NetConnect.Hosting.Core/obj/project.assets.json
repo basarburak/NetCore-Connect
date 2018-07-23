@@ -907,23 +907,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bba\\.nuget\\packages\\": {},
+    "C:\\Users\\HKD44\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bba\\Documents\\GitHub\\NetConnect\\NetConnect.Hosting.Core\\NetConnect.Hosting.Core.csproj",
+      "projectUniqueName": "C:\\Users\\HKD44\\Documents\\GitHub\\NetConnect\\NetConnect.Hosting.Core\\NetConnect.Hosting.Core.csproj",
       "projectName": "NetConnect.Hosting.Core",
-      "projectPath": "C:\\Users\\bba\\Documents\\GitHub\\NetConnect\\NetConnect.Hosting.Core\\NetConnect.Hosting.Core.csproj",
-      "packagesPath": "C:\\Users\\bba\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bba\\Documents\\GitHub\\NetConnect\\NetConnect.Hosting.Core\\obj\\",
+      "projectPath": "C:\\Users\\HKD44\\Documents\\GitHub\\NetConnect\\NetConnect.Hosting.Core\\NetConnect.Hosting.Core.csproj",
+      "packagesPath": "C:\\Users\\HKD44\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HKD44\\Documents\\GitHub\\NetConnect\\NetConnect.Hosting.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\bba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HKD44\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

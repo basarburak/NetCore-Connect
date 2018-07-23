@@ -14,11 +14,10 @@ namespace NetConnect.Hosting.HubServer.Hubs
 
         public override async Task OnConnectedAsync()
         {
-            var headers = Context.GetHttpContext().Request.Headers["midlaware"];
+            var userId = Context.GetHttpContext().Request.Query[NetConnectClaims.UserId];
 
-            var userId = Context.GetHttpContext().Request.Headers[NetConnectClaims.UserId];
-            var name = Context.GetHttpContext().Request.Headers[NetConnectClaims.Name];
-            var lastname = Context.GetHttpContext().Request.Headers[NetConnectClaims.Lastname];
+            var name = Context.GetHttpContext().Request.Query[NetConnectClaims.Name];
+            var lastname = Context.GetHttpContext().Request.Query[NetConnectClaims.Lastname];
 
             var fullName = name + " " + lastname;
 
@@ -26,7 +25,7 @@ namespace NetConnect.Hosting.HubServer.Hubs
 
             userList.Add(connectionId, userId);
 
-            await Clients.All.SendAsync("broadcastMessage", $"{fullName} şuan bağlandı.");
+            await Clients.All.SendAsync("broadcastMessage", fullName, "şuan bağlandı");
         }
 
         public override async Task OnDisconnectedAsync(Exception ex)
@@ -41,7 +40,7 @@ namespace NetConnect.Hosting.HubServer.Hubs
             Clients.All.SendAsync("broadcastMessage", name, message);
         }
 
-        public Dictionary<string,string> GetAllUsers()
+        public Dictionary<string, string> GetAllUsers()
         {
             return userList;
         }
