@@ -1,0 +1,12 @@
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.BaseHub\bin\Debug\netstandard2.0\NetConnect.Hosting.BaseHub.deps.json
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.BaseHub\bin\Debug\netstandard2.0\NetConnect.Hosting.BaseHub.dll
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.BaseHub\bin\Debug\netstandard2.0\NetConnect.Hosting.BaseHub.pdb
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.BaseHub\obj\Debug\netstandard2.0\NetConnect.Hosting.BaseHub.csprojAssemblyReference.cache
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.BaseHub\obj\Debug\netstandard2.0\NetConnect.Hosting.BaseHub.csproj.CoreCompileInputs.cache
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.BaseHub\obj\Debug\netstandard2.0\NetConnect.Hosting.BaseHub.AssemblyInfoInputs.cache
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.BaseHub\obj\Debug\netstandard2.0\NetConnect.Hosting.BaseHub.AssemblyInfo.cs
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.BaseHub\obj\Debug\netstandard2.0\NetConnect.Hosting.BaseHub.dll
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.BaseHub\obj\Debug\netstandard2.0\NetConnect.Hosting.BaseHub.pdb
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.BaseHub\bin\Debug\netstandard2.0\NetConnect.Hosting.Core.dll
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.BaseHub\bin\Debug\netstandard2.0\NetConnect.Hosting.Core.pdb
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.BaseHub\obj\Debug\netstandard2.0\NetConnect.Hosting.BaseHub.csproj.CopyComplete

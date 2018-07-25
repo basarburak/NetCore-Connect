@@ -83,6 +83,50 @@ namespace NetConnect.Hosting.Auth
                         "api1"
                     },
                     AllowOfflineAccess = true
+                },
+                 new Client
+                {
+                    ClientId = "app1",
+                    ClientName = "App1",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+
+                    RedirectUris = { "https://localhost:44342/signin-oidc" },
+                    PostLogoutRedirectUris = { "https://localhost:44342/signout-callback-oidc" },
+
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "api1"
+                    },
+                    AllowOfflineAccess = true
+                },
+                  new Client
+                {
+                    ClientId = "app2",
+                    ClientName = "App2",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+
+                    RedirectUris = { "https://localhost:44320/signin-oidc" },
+                    PostLogoutRedirectUris = { "https://localhost:44320/signout-callback-oidc" },
+
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "api1"
+                    },
+                    AllowOfflineAccess = true
                 }
             };
         }

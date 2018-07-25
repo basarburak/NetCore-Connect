@@ -82,7 +82,7 @@ using NetConnect.Hosting.Core;
             WriteLiteral("\r\n<br /> <br /> <br />\r\n<div class=\"container\">\r\n    <input type=\"text\" id=\"message\" />\r\n    <input type=\"button\" id=\"sendmessage\" value=\"Send\" />\r\n    <ul id=\"discussion\"></ul>\r\n</div>\r\n<!--Script references. -->\r\n<!--Reference the SignalR library. -->\r\n");
             EndContext();
             BeginContext(670, 55, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75a9b54317a5466d84e4c3c9a89d3ca9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d001e509964f4b2cb11f37e4d3c45e2c", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -100,7 +100,7 @@ using NetConnect.Hosting.Core;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(727, 44, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4864942cd61f4ea5a05f6ad712ac7517", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "176a4f3d571c4514bc5e6f6c74235ff8", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
