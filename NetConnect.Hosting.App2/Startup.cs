@@ -27,7 +27,8 @@ namespace NetConnect.Hosting.App2
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddChatHubRedis();
+            services.AddChatHub(true);
+
             services.AddAuthentication(options =>
             {
                 options.DefaultScheme = "Cookies";

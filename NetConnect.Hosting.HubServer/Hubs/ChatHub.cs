@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.SignalR;
 using NetConnect.Hosting.Core;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace NetConnect.Hosting.HubServer.Hubs

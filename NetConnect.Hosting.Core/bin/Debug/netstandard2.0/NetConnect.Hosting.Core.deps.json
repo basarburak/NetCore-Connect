@@ -914,7 +914,7 @@
     "Microsoft.NETCore.Targets/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
+      "sha512": "sha512-f+qRQiqPZc5d4kaXbi+K/NfQ9g2pGQuBLM2TCm1k5P79k3HwXJ9LD8JeyTMRbjww/IjQEhfOtMfDD9VdsKa4sA==",
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
@@ -942,7 +942,7 @@
     "System.IO/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
+      "sha512": "sha512-bUFcBJJTBHIalVb/gCqbmeZs4q8nnZ1J8nXlE1vjKthz8FZERJi5DSKbTuxZx3usC5h3RQQ3XrEyz9wWG0+5Sw==",
       "path": "system.io/4.3.0",
       "hashPath": "system.io.4.3.0.nupkg.sha512"
     },

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NetConnect.Hosting.App2.Models;
-using NetConnect.Hosting.BaseHub;
+using System.Diagnostics;
 
 namespace NetConnect.Hosting.App2.Controllers
 {

@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.SignalR;
-using NetConnect.Hosting.Core;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace NetConnect.Hosting.BaseHub

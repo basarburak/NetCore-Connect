@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace NetConnect.Hosting.WebApp.Controllers
 {
+    [Authorize]
     public class BaseController : Controller
     {
     }

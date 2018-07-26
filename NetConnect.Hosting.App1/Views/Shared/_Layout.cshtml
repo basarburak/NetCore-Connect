@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - NetConnect.Hosting.App1</title>
@@ -17,6 +18,11 @@
     </environment>
 </head>
 <body>
+    @{
+        var name = User.Claims.Where(x => x.Type == NetConnectClaims.Name).First().Value;
+        var lastname = User.Claims.Where(x => x.Type == NetConnectClaims.Lastname).First().Value;
+        var fullName = name + " " + lastname;
+    }
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -26,7 +32,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">NetConnect.Hosting.App1</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Merhaba @fullName</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">

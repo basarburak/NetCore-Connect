@@ -1186,7 +1186,7 @@
       ]
     },
     "Microsoft.NETCore.Targets/1.1.0": {
-      "sha512": "aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
+      "sha512": "f+qRQiqPZc5d4kaXbi+K/NfQ9g2pGQuBLM2TCm1k5P79k3HwXJ9LD8JeyTMRbjww/IjQEhfOtMfDD9VdsKa4sA==",
       "type": "package",
       "path": "microsoft.netcore.targets/1.1.0",
       "files": [
@@ -1382,7 +1382,7 @@
       ]
     },
     "System.IO/4.3.0": {
-      "sha512": "3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
+      "sha512": "bUFcBJJTBHIalVb/gCqbmeZs4q8nnZ1J8nXlE1vjKthz8FZERJi5DSKbTuxZx3usC5h3RQQ3XrEyz9wWG0+5Sw==",
       "type": "package",
       "path": "system.io/4.3.0",
       "files": [
@@ -2105,23 +2105,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HKD44\\.nuget\\packages\\": {},
+    "C:\\Users\\bba\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HKD44\\Documents\\GitHub\\NetConnect\\NetConnect.Hosting.Core\\NetConnect.Hosting.Core.csproj",
+      "projectUniqueName": "C:\\Users\\bba\\Documents\\GitHub\\NetConnect\\NetConnect.Hosting.Core\\NetConnect.Hosting.Core.csproj",
       "projectName": "NetConnect.Hosting.Core",
-      "projectPath": "C:\\Users\\HKD44\\Documents\\GitHub\\NetConnect\\NetConnect.Hosting.Core\\NetConnect.Hosting.Core.csproj",
-      "packagesPath": "C:\\Users\\HKD44\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HKD44\\Documents\\GitHub\\NetConnect\\NetConnect.Hosting.Core\\obj\\",
+      "projectPath": "C:\\Users\\bba\\Documents\\GitHub\\NetConnect\\NetConnect.Hosting.Core\\NetConnect.Hosting.Core.csproj",
+      "packagesPath": "C:\\Users\\bba\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bba\\Documents\\GitHub\\NetConnect\\NetConnect.Hosting.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\HKD44\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bba\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
