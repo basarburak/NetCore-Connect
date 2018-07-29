@@ -4,49 +4,126 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@{
+    var userId = User.GetChatUsers().UserId;
+}
+<link href="~/chat.css" rel="stylesheet" />
 
-<br /> <br /> <br />
 <div class="container">
-    <input type="text" id="message" />
-    <input type="button" id="sendmessage" value="Send" />
-    <ul id="discussion"></ul>
+    <h3 class=" text-center">Messaging</h3>
+    <div class="messaging">
+        <div class="inbox_msg">
+            <div class="inbox_people">
+                <div class="headind_srch">
+                    <div class="recent_heading">
+                        <h4>Users</h4>
+                    </div>
+
+                </div>
+                <div class="inbox_chat" id="users">
+
+                </div>
+            </div>
+            <div class="mesgs">
+                <div class="msg_history" id="messages">
+
+                </div>
+                <div class="type_msg">
+                    <div class="input_msg_write">
+                        <input type="text" id="message" class="write_msg" placeholder="Mesajınız" />
+                        <button class="msg_send_btn" id="sendmessage" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
-<!--Script references. -->
-<!--Reference the SignalR library. -->
+
+
+
+
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/signalr.min.js"></script>
 <!--Add script to update the page and send messages.-->
 <script type="text/javascript">
+
+    var userId = '@userId';
+
     document.addEventListener('DOMContentLoaded', function () {
 
         var messageInput = document.getElementById('message');
-
         var uri = '/chat';
+        var name = 'App1';
 
-         @*var uri = 'https://localhost:44317/chat?user-Id=' + '@userId' + '&user-name=' + '@name';*@
-
-        // Get the user name and store it to prepend to messages.
-        var name = 'App2';
-        // Set initial focus to message input box.
         messageInput.focus();
-        // Start the connection.
+
         var connection = new signalR.HubConnectionBuilder()
             .withUrl(uri)
             .build();
 
-
-       // connection.qs = { 'user-Id': '1.0' };
-
-        // Create a function that the hub can call to broadcast messages.
-        //Mesaj Geldıgınde...
         connection.on('broadcastMessage', function (name, message) {
             // Html encode display name and message.
+
             var encodedName = name;
             var encodedMsg = message;
-            // Add the message to the page.
-            var liElement = document.createElement('li');
-            liElement.innerHTML = '<strong>' + encodedName + '</strong>:&nbsp;&nbsp;' + encodedMsg;
-            document.getElementById('discussion').appendChild(liElement);
+
+            var incomingMessage = '<div class="incoming_msg">' +
+               '<div class="received_msg">' +
+                    '<div class="received_withd_msg">' +
+                '<p>' +
+                message +
+                                '</p>' +
+                        '<span class="time_date"> </span>' +
+                    '</div>' +
+                        '</div >' +
+                '</div >';
+
+            var outgoingMessage = ' <div class="outgoing_msg">' +
+               ' < div class="sent_msg" >' +
+                    '<p>' +
+                    message +
+                            '</p>' +
+                    '<span class="time_date"></span>' +
+                        '</div >' +
+                    '</div >';
+
+            //incomingMessage
+            var incomingMessageElement = document.createElement('div');
+            incomingMessageElement.innerHTML = incomingMessage;
+            document.getElementById('messages').appendChild(incomingMessageElement);
+        });
+
+        connection.on('onlineUsers', function (users) {
+            console.log(users);
+            $("#users").empty();
+
+            users.forEach(function (entry) {
+                console.log(entry);
+
+                var nameLastname = entry.nameLastname;
+
+                if (entry.userId != userId) {
+                    var user = '<div class="chat_list active_chat">' +
+                        '<div class="chat_people">' +
+                        '<div class="chat_ib">' +
+                        '<h5>' + nameLastname + '<span class="chat_date">Çevrimiçi</span></h5>' +
+                        '<p>' +
+                        'Çevrimiçi' +
+                        ' ' +
+                        '</p>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+
+                    var liElement = document.createElement('div');
+
+                    liElement.innerHTML = user;
+
+                    document.getElementById('users').appendChild(liElement);
+                }
+
+            });
         });
 
         // Transport fallback functionality is now built into start.
@@ -70,4 +147,5 @@
             .catch(error => {
                 console.error(error.message);
             });
-    });</script>
+    });
+</script>

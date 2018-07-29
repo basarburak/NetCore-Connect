@@ -2,19 +2,21 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using NetConnect.Hosting.HubServer.Hubs;
+using NetConnect.Hosting.BaseHub.Extensions;
 
 namespace NetConnect.Hosting.HubServer
 {
     public class Startup
     {
+        string policy = "Everything";
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSignalR();
+            services.AddChatHub(false);
 
             services.AddCors(o =>
             {
-                o.AddPolicy("Everything", p =>
+                o.AddPolicy(policy, p =>
                 {
                     p.AllowAnyHeader()
                      .AllowAnyMethod()
@@ -33,12 +35,9 @@ namespace NetConnect.Hosting.HubServer
 
             app.UseFileServer();
 
-            app.UseCors("Everything");
+            app.UseCors(policy);
 
-            app.UseSignalR(routes =>
-            {
-                routes.MapHub<ChatHub>("/chat");
-            });
+            app.UseChatHub();
 
             app.Run(async (context) =>
             {

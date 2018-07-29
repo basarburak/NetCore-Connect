@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace NetConnect.Hosting.BaseHub.ChatHub
+namespace NetConnect.Hosting.BaseHub.Extensions
 {
     public static class ServiceExtensions
     {
@@ -9,16 +9,16 @@ namespace NetConnect.Hosting.BaseHub.ChatHub
         {
             app.UseSignalR(routes =>
             {
-                routes.MapHub<ChatHub>(chatUrl);
+                routes.MapHub<NetConnect.Hosting.BaseHub.Hubs.ChatHub>(chatUrl);
             });
 
             return app;
         }
 
-        public static IServiceCollection AddChatHub(this IServiceCollection services, bool addRedis = false)
+        public static IServiceCollection AddChatHub(this IServiceCollection services, bool addRedis = false, string redisConnectionString = "127.0.0.1:6379")
         {
             if (addRedis)
-                services.AddSignalR().AddRedis("127.0.0.1:6379");
+                services.AddSignalR().AddRedis(redisConnectionString);
             else
                 services.AddSignalR();
 

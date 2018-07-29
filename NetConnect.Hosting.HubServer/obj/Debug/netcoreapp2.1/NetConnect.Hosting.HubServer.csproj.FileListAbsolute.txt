@@ -32,3 +32,5 @@ C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.HubServer\obj\Debug\
 C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.HubServer\obj\Debug\netcoreapp2.1\NetConnect.Hosting.HubServer.csproj.CopyComplete
 C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.HubServer\obj\Debug\netcoreapp2.1\NetConnect.Hosting.HubServer.dll
 C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.HubServer\obj\Debug\netcoreapp2.1\NetConnect.Hosting.HubServer.pdb
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.HubServer\bin\Debug\netcoreapp2.1\NetConnect.Hosting.BaseHub.dll
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.HubServer\bin\Debug\netcoreapp2.1\NetConnect.Hosting.BaseHub.pdb

@@ -68,3 +68,5 @@ C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.App2\obj\Debug\netco
 C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.App2\obj\Debug\netcoreapp2.1\NetConnect.Hosting.App2.csproj.CopyComplete
 C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.App2\obj\Debug\netcoreapp2.1\NetConnect.Hosting.App2.dll
 C:\Users\bba\Documents\GitHub\NetConnect\NetConnect.Hosting.App2\obj\Debug\netcoreapp2.1\NetConnect.Hosting.App2.pdb
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.App2\bin\Debug\netcoreapp2.1\NetConnect.Hosting.Core.dll
+C:\Users\HKD44\Documents\GitHub\NetConnect\NetConnect.Hosting.App2\bin\Debug\netcoreapp2.1\NetConnect.Hosting.Core.pdb

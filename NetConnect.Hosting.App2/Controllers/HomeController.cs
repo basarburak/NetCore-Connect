@@ -1,18 +1,16 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NetConnect.Hosting.App2.Models;
+using NetConnect.Hosting.Core.Controllers;
 using System.Diagnostics;
 
 namespace NetConnect.Hosting.App2.Controllers
 {
     [Authorize]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public IActionResult Index()
         {
-            //var chatHub = new ChatHubClient("https://localhost:44320");
-            //chatHub.Connect();
-
             return View();
         }
 

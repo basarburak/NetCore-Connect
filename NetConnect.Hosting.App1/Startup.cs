@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NetConnect.Hosting.BaseHub;
-using NetConnect.Hosting.BaseHub.ChatHub;
+using NetConnect.Hosting.BaseHub.Extensions;
+using NetConnect.Hosting.Core.Extensions;
 
 namespace NetConnect.Hosting.App1
 {
@@ -28,22 +28,7 @@ namespace NetConnect.Hosting.App1
 
             services.AddChatHub(true);
 
-            services.AddAuthentication(options =>
-            {
-                options.DefaultScheme = "Cookies";
-                options.DefaultChallengeScheme = "oidc";
-            })
-               .AddCookie("Cookies")
-               .AddOpenIdConnect("oidc", options =>
-               {
-                   options.SignInScheme = "Cookies";
-
-                   options.Authority = "http://localhost:5000";
-                   options.RequireHttpsMetadata = false;
-
-                   options.ClientId = "app1";
-                   options.SaveTokens = true;
-               });
+            services.AddNetConnectOpenIdCookie("app1", "http://localhost:5000", true, "CookiesApp1");
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

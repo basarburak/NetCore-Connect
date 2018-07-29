@@ -144,7 +144,7 @@ namespace NetConnect.Hosting.Auth
                     Claims = new List<Claim>
                     {
                         new Claim(NetConnectClaims.Name, "Burak"),
-                        new Claim(NetConnectClaims.Lastname, "Basar"),
+                        new Claim(NetConnectClaims.Lastname, "Başar"),
                         new Claim(NetConnectClaims.UserId, "1"),
                         new Claim(NetConnectClaims.Email, "burak@deneme.com")
                     }
@@ -152,15 +152,15 @@ namespace NetConnect.Hosting.Auth
                 new TestUser
                 {
                     SubjectId = "2",
-                    Username = "busra.kaya",
+                    Username = "ali.kaya",
                     Password = "123",
 
                     Claims = new List<Claim>
                     {
-                        new Claim(NetConnectClaims.Name, "Busra"),
+                        new Claim(NetConnectClaims.Name, "Ali"),
                         new Claim(NetConnectClaims.Lastname, "Kaya"),
                         new Claim(NetConnectClaims.UserId, "2"),
-                        new Claim(NetConnectClaims.Email, "busra@deneme.com")
+                        new Claim(NetConnectClaims.Email, "ali@deneme.com")
                     }
                 }
             };
