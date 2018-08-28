@@ -4,6 +4,7 @@ using NetConnect.Hosting.BaseHub.Extensions;
 using NetConnect.Hosting.BaseHub.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace NetConnect.Hosting.BaseHub.Hubs
@@ -30,11 +31,20 @@ namespace NetConnect.Hosting.BaseHub.Hubs
             SendOnlineUsers();
         }
 
-        public void Send(string name, string message)
+        //public void Send(string name, string message)
+        //{
+        //    var fullname = Context.User.Identity.IsAuthenticated ? Context.GetUserFullName() : name;
+
+        //    Clients.All.SendAsync(ChatMethod.ReceiveMessage, fullname, message);
+        //}
+
+        public void Send(string name, string message, string userId)
         {
             var fullname = Context.User.Identity.IsAuthenticated ? Context.GetUserFullName() : name;
 
-            Clients.All.SendAsync(ChatMethod.ReceiveMessage, fullname, message);
+            var userConnectionIds = userList.MapChatUsers().Where(x => x.UserId == userId).Select(x => x.ConnectionId).ToList();
+
+            Clients.Client(userConnectionIds.FirstOrDefault()).SendAsync(ChatMethod.ReceiveMessage, name, message);
         }
 
         private void SendOnlineUsers()

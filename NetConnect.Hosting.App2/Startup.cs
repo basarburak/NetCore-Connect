@@ -26,7 +26,7 @@ namespace NetConnect.Hosting.App2
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddChatHub(true);
+            services.AddChatHub(false);
 
             services.AddNetConnectOpenIdCookie("app2", "http://localhost:5000", true, "CookiesApp2");
 

@@ -10,8 +10,9 @@
 <link href="~/chat.css" rel="stylesheet" />
 
 <div class="container">
-    <h3 class=" text-center">Messaging</h3>
+    <h3 class=" text-center" id="selectedUser"></h3>
     <div class="messaging">
+        <input type="hidden" id="userId" value="0" />
         <div class="inbox_msg">
             <div class="inbox_people">
                 <div class="headind_srch">
@@ -24,7 +25,7 @@
 
                 </div>
             </div>
-            <div class="mesgs">
+            <div class="mesgs" id="msgBox" style="display:none">
                 <div class="msg_history" id="messages">
 
                 </div>
@@ -55,7 +56,7 @@
         var messageInput = document.getElementById('message');
         var uri = '/chat';
         var name = 'App1';
-
+      
         messageInput.focus();
 
         var connection = new signalR.HubConnectionBuilder()
@@ -107,7 +108,7 @@
                     var user = '<div class="chat_list active_chat">' +
                         '<div class="chat_people">' +
                         '<div class="chat_ib">' +
-                        '<h5>' + nameLastname + '<span class="chat_date">Çevrimiçi</span></h5>' +
+                        '<a id="' + userId + '" href = "#" class="userList" > ' + nameLastname + '</a > ' +
                         '<p>' +
                         'Çevrimiçi' +
                         ' ' +
@@ -121,10 +122,17 @@
                     liElement.innerHTML = user;
 
                     document.getElementById('users').appendChild(liElement);
+
+                    $('.userList').on('click', function () {
+                        $('#msgBox').css("display", "unset");
+                        $('#selectedUser').text($(this).text());
+                        $('#userId').val($(this).attr('id'));
+                    });
                 }
 
             });
         });
+
 
         // Transport fallback functionality is now built into start.
         connection.start()
@@ -135,7 +143,9 @@
                 //send message
                 document.getElementById('sendmessage').addEventListener('click', function (event) {
                     // Call the Send method on the hub.
-                    connection.invoke('send', name, messageInput.value);
+                    var userId = $('#userId').val();
+
+                    connection.invoke('send', name, messageInput.value, userId);
 
                     // Clear text box and reset focus for next comment.
                     messageInput.value = '';
