@@ -10,14 +10,14 @@
 <link href="~/chat.css" rel="stylesheet" />
 
 <div class="container">
-    <h3 class=" text-center" id="selectedUser"></h3>
+    <h3 class=" text-center" id="selectedUserText"></h3>
     <div class="messaging">
-        <input type="hidden" id="userId" value="0" />
+        <input type="hidden" id="selectedUserId" value="0" />
         <div class="inbox_msg">
             <div class="inbox_people">
                 <div class="headind_srch">
                     <div class="recent_heading">
-                        <h4>Users</h4>
+                        <h4>Kullanıcılar</h4>
                     </div>
 
                 </div>
@@ -42,120 +42,14 @@
 </div>
 
 
-
-
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/signalr.min.js"></script>
-<!--Add script to update the page and send messages.-->
+<script src="~/chat.js"></script>
+
 <script type="text/javascript">
 
     var userId = '@userId';
 
-    document.addEventListener('DOMContentLoaded', function () {
+    chatLoad(userId);
 
-        var messageInput = document.getElementById('message');
-        var uri = '/chat';
-        var name = 'App1';
-      
-        messageInput.focus();
-
-        var connection = new signalR.HubConnectionBuilder()
-            .withUrl(uri)
-            .build();
-
-        connection.on('broadcastMessage', function (name, message) {
-            // Html encode display name and message.
-
-            var encodedName = name;
-            var encodedMsg = message;
-
-            var incomingMessage = '<div class="incoming_msg">' +
-               '<div class="received_msg">' +
-                    '<div class="received_withd_msg">' +
-                '<p>' +
-                message +
-                                '</p>' +
-                        '<span class="time_date"> </span>' +
-                    '</div>' +
-                        '</div >' +
-                '</div >';
-
-            var outgoingMessage = ' <div class="outgoing_msg">' +
-               ' < div class="sent_msg" >' +
-                    '<p>' +
-                    message +
-                            '</p>' +
-                    '<span class="time_date"></span>' +
-                        '</div >' +
-                    '</div >';
-
-            //incomingMessage
-            var incomingMessageElement = document.createElement('div');
-            incomingMessageElement.innerHTML = incomingMessage;
-            document.getElementById('messages').appendChild(incomingMessageElement);
-        });
-
-        connection.on('onlineUsers', function (users) {
-            console.log(users);
-            $("#users").empty();
-
-            users.forEach(function (entry) {
-                console.log(entry);
-
-                var nameLastname = entry.nameLastname;
-
-                if (entry.userId != userId) {
-                    var user = '<div class="chat_list active_chat">' +
-                        '<div class="chat_people">' +
-                        '<div class="chat_ib">' +
-                        '<a id="' + userId + '" href = "#" class="userList" > ' + nameLastname + '</a > ' +
-                        '<p>' +
-                        'Çevrimiçi' +
-                        ' ' +
-                        '</p>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>';
-
-                    var liElement = document.createElement('div');
-
-                    liElement.innerHTML = user;
-
-                    document.getElementById('users').appendChild(liElement);
-
-                    $('.userList').on('click', function () {
-                        $('#msgBox').css("display", "unset");
-                        $('#selectedUser').text($(this).text());
-                        $('#userId').val($(this).attr('id'));
-                    });
-                }
-
-            });
-        });
-
-
-        // Transport fallback functionality is now built into start.
-        connection.start()
-            .then(function () {
-                console.log(connection);
-
-                console.log('connection started');
-                //send message
-                document.getElementById('sendmessage').addEventListener('click', function (event) {
-                    // Call the Send method on the hub.
-                    var userId = $('#userId').val();
-
-                    connection.invoke('send', name, messageInput.value, userId);
-
-                    // Clear text box and reset focus for next comment.
-                    messageInput.value = '';
-                    messageInput.focus();
-                    event.preventDefault();
-                });
-
-            })
-            .catch(error => {
-                console.error(error.message);
-            });
-    });
 </script>

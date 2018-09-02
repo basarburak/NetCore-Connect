@@ -44,7 +44,7 @@ namespace NetConnect.Hosting.BaseHub.Hubs
 
             var userConnectionIds = userList.MapChatUsers().Where(x => x.UserId == userId).Select(x => x.ConnectionId).ToList();
 
-            Clients.Client(userConnectionIds.FirstOrDefault()).SendAsync(ChatMethod.ReceiveMessage, name, message);
+            Clients.All.SendAsync(ChatMethod.ReceiveMessage, Context.User.GetChatUsers().UserId, name, message);
         }
 
         private void SendOnlineUsers()
